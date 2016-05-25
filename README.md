@@ -33,3 +33,9 @@
 - heroku open
 
 *devise installation and Task association*
+
+- git push origin master
+- git push heroku master
+- heroku open
+
+*layouts and partials*
