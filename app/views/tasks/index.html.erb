@@ -1,6 +1,10 @@
-<h1>Listing Tasks</h1>
 
-<%= render 'tasks/table' %>
+<% if @tasks.any? %>
+  <%= render 'tasks/table' %>
+<% else %>
+  <h3>No tasks yet!</h3>
+<% end %>
+
 
 <br>
 
