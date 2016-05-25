@@ -46,3 +46,13 @@
 - heroku open
 
 *bootstrap and font-awesome*
+
+- git push origin master
+- git push heroku master
+- heroku open
+
+*basic task styles and logic*
+
+- git push origin master
+- git push heroku master
+- heroku open
