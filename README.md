@@ -20,3 +20,16 @@
 - heroku open
 
 *tasks scaffold, partials, model business logic*
+
+- rails g devise:install
+- rails g devise User
+- rails g devise:views
+- rake db:migrate
+- rails g migration AddsUserToTasks user:references
+- rake db:migrate
+- git push origin master
+- git push heroku master
+- heroku run rake db:migrate
+- heroku open
+
+*devise installation and Task association*
