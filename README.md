@@ -39,3 +39,10 @@
 - heroku open
 
 *layouts and partials*
+
+- bundle
+- git push origin master
+- git push heroku master
+- heroku open
+
+*bootstrap and font-awesome*
