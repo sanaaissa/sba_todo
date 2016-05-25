@@ -7,7 +7,6 @@
 <% end %>
   <td><%= task.title %></td>
   <td><%= task.description %></td>
-  <td><%= task.completed %></td>
   <% if task.completed_at %>
     <td><%= task.completed_at.strftime('%B %d, %Y at %l:%M%P') %></td>
   <% else %>
