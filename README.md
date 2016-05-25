@@ -12,3 +12,11 @@
 - git push heroku master
 
 *heroku ready*
+
+- rails g scaffold Task title description:text completed:boolean completed_at:datetime
+- rake db:migrate
+- git push origin master
+- git push heroku master
+- heroku open
+
+*tasks scaffold, partials, model business logic*
