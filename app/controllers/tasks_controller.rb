@@ -1,11 +1,13 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
+
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all.order(completed: :asc)
+    @tasks = Task.all.order(completed: :asc, updated_at: :desc)
   end
 
   # GET /tasks/1
@@ -31,9 +33,11 @@ class TasksController < ApplicationController
       if @task.save
         format.html { redirect_to root_path, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,11 +48,9 @@ class TasksController < ApplicationController
     respond_to do |format|
       if params[:completed]
         if @task.update(completed: params[:completed])
-          format.html { redirect_to root_path, notice: 'Task was marked as completed.' }
-          format.json { render :show, status: :ok, location: @task }
+          format.js
         else
-          format.html { render :edit }
-          format.json { render json: @task.errors, status: :unprocessable_entity }
+          format.js
         end
       else
         if @task.update(task_params)
@@ -62,6 +64,7 @@ class TasksController < ApplicationController
     end
   end
 
+
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
@@ -69,6 +72,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_path, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

@@ -1,11 +1,27 @@
-
-<% if @tasks.any? %>
-  <%= render 'tasks/table' %>
-<% else %>
-  <h3>No tasks yet!</h3>
-<% end %>
+<!--<div class="task-form"></div>-->
 
 
-<br>
 
-<%= link_to 'New Task', new_task_path %>
+<div class="row">
+  <div class="col-md-5 col-md-offset-1">
+    <h2>Tasks</h2>
+  </div>
+
+  <div class="col-md-2 col-md-offset-4">
+    <%= link_to new_task_path, class:'new_link', remote: true do %>
+      <button class="btn btn-primary btn-lg">New</button>
+    <% end %>
+  </div>
+
+
+
+
+<div class="row">
+  <% if @tasks.any? %>
+    <div class="col-md-7 col-md-offset-1" id="tasks"><%= render 'tasks/table' %></div>
+    <% else %>
+      <h3>No tasks yet!</h3>
+    <% end %>
+
+</div>
+</div>

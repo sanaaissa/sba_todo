@@ -1,0 +1,9 @@
+$('.new_link').hide();
+var $taskForm = $('#new_task')
+if ($taskForm.length == 0) {
+  $('body').prepend('<%= j render 'form' %>')
+} else {
+  $taskForm.show()
+}
+//$('.task-form').html("<%= j (render 'form') %>");
+$('.task-form').slideDown(500);
